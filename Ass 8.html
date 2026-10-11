@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 8 - Assignment 8: Data Science & Cloud Computing in Bioinformatics</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #0f766e;
+      --text: #1f2937;
+      --text-muted: #4b5563;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --accent: #f59e0b;
+      --code-bg: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-bottom: 0.25rem;
+    }
+
+    .student-meta {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .student-meta div {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      color: var(--secondary);
+      margin: 1.25rem 0 0.5rem 0;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    strong {
+      color: #111827;
+    }
+
+    .calc-box {
+      background-color: #eff6ff;
+      border-left: 4px solid var(--primary-light);
+      padding: 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fcfcfd;
+    }
+
+    .workflow-step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .workflow-step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .step-badge {
+      background: var(--primary);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Data Science and Cloud Computing in Bioinformatics</h1>
+    <p>Module - 8 &bull; Assignment - 8</p>
+    <div class="student-meta">
+      <div><strong>Student Name:</strong> Meti Habtamu</div>
+      <div><strong>Student ID:</strong> GSR/6764/18</div>
+    </div>
+  </header>
+
+  <!-- QUESTION 1 -->
+  <section class="card">
+    <h2>1. The 5 Vs of Big Data in Bioinformatics</h2>
+    <p>Big Data in bioinformatics is characterized by five core dimensions:</p>
+    <ul>
+      <li>
+        <strong>1. Volume (Scale of Data):</strong> The massive physical size and sheer quantity of biological data produced.
+        <br><em>Bioinformatics Example:</em> The <strong>UK Biobank</strong> dataset, containing whole-genome sequencing (WGS) for 500,000 human participants, producing multi-petabyte volumes of raw FASTQ and CRAM files.
+      </li>
+      <li>
+        <strong>2. Velocity (Speed of Generation & Processing):</strong> The rate at which genomic data is continuously generated and must be processed in real time.
+        <br><em>Bioinformatics Example:</em> Real-time streaming basecalling and adaptive target enrichment (e.g., Readfish) during <strong>Oxford Nanopore sequencing</strong>, allowing instantaneous pathogen detection during infectious disease outbreaks.
+      </li>
+      <li>
+        <strong>3. Variety (Diversity of Data Types):</strong> The heterogeneity of structured, semi-structured, and unstructured biological formats.
+        <br><em>Bioinformatics Example:</em> <strong>Multi-omics integration</strong> combining DNA sequences (FASTA/VCF), transcriptomics (RNA-seq count matrices), mass spectrometry proteomics, and Electronic Health Records (EHR).
+      </li>
+      <li>
+        <strong>4. Veracity (Quality, Noise & Uncertainty):</strong> The precision, reliability, and experimental noise intrinsic to high-throughput biological data.
+        <br><em>Bioinformatics Example:</em> <strong>Phred quality scores (Q-scores)</strong> representing basecalling error probabilities, PCR duplicate artifacts, batch effects across sequencing facilities, and mapping ambiguities in repetitive genomic regions.
+      </li>
+      <li>
+        <strong>5. Value (Actionable Biological Insights):</strong> Translating massive raw genomic data into clinical, diagnostic, or therapeutic interventions.
+        <br><em>Bioinformatics Example:</em> Identifying actionable driver mutations (e.g., <em>BRAF</em> V600E or <em>EGFR</em> mutations) to prescribe targeted oncological therapies.
+      </li>
+    </ul>
+  </section>
+
+  <!-- QUESTION 2 -->
+  <section class="card">
+    <h2>2. Storage Calculation & Major Computational Challenges</h2>
+    
+    <h3>A. Storage Requirement Calculation</h3>
+    <div class="calc-box">
+      Total Genomes (N)              = 10,000<br>
+      Raw / Aligned Data per Genome  = 100 GB<br>
+      ------------------------------------------------------------<br>
+      Total Storage = 10,000 × 100 GB = 1,000,000 GB<br>
+                    = 1,000 TB<br>
+                    = 1 Petabyte (PB)  [≈ 909.5 TiB]
+    </div>
+    <p><em>Note:</em> In production settings, accounting for standard 3× cloud replication (redundancy) and intermediate files (such as gVCFs and variant indices), the total provisioned storage typically requires <strong>2 to 3 PB</strong>.</p>
+
+    <h3>B. Three Major Computational Challenges</h3>
+    <ol>
+      <li>
+        <strong>I/O and Network Transfer Bottlenecks:</strong> Transferring petabyte-scale datasets between storage arrays and compute nodes severely saturates network bandwidth and I/O channels. Compute cores frequently sit idle waiting for read/write operations to complete.
+      </li>
+      <li>
+        <strong>Scalability of Multi-Sample Joint Genotyping (The <em>N²</em> Bottleneck):</strong> Performing joint variant calling across 10,000 individuals creates a dense matrix of 10,000 samples × ~30+ million variant sites. Pairwise comparisons and joint genotyping scale quadratically (<em>O(N²)</em>), exceeding single-node RAM limits.
+      </li>
+      <li>
+        <strong>Cost, Redundancy, and Lifecycle Storage Management:</strong> Keeping 1 PB of data on high-speed "hot" storage (NVMe/SSD) is cost-prohibitive. Archiving requires automated lifecycle management (tiering from hot storage to cold cloud archives like AWS S3 Glacier), deep compression (CRAM, BCF), and continuous checksum validation.
+      </li>
+    </ol>
+  </section>
+
+  <!-- QUESTION 3 -->
+  <section class="card">
+    <h2>3. Computing Paradigms Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Single-Machine Computing</th>
+          <th>High-Performance Computing (HPC)</th>
+          <th>Distributed Big Data Computing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Architecture</strong></td>
+          <td>Scale-up: Single workstation with multi-core CPU and local RAM.</td>
+          <td>Scale-out: Homogeneous compute nodes connected via low-latency InfiniBand networks.</td>
+          <td>Scale-out: Heterogeneous clusters of commodity nodes or cloud virtual instances.</td>
+        </tr>
+        <tr>
+          <td><strong>Storage & Memory</strong></td>
+          <td>Local SSD/HDD; shared memory among local threads.</td>
+          <td>Centralized shared parallel filesystem (e.g., Lustre, GPFS, NFS).</td>
+          <td>Distributed storage (e.g., HDFS, S3, Ceph); data partitioned across cluster nodes.</td>
+        </tr>
+        <tr>
+          <td><strong>Fault Tolerance</strong></td>
+          <td>None. Failure requires manual restart from the beginning.</td>
+          <td>Job-level management via schedulers (SLURM, PBS). No automatic sub-task recovery.</td>
+          <td>Built-in automatic task retry, data replication, and lineage-based recovery (DAG).</td>
+        </tr>
+        <tr>
+          <td><strong>Programming Model</strong></td>
+          <td>Sequential or multi-threaded scripts (Python, R, Bash).</td>
+          <td>MPI / OpenMP for tightly-coupled communication; array batch jobs.</td>
+          <td>MapReduce, Apache Spark DataFrames, Resilient Distributed Datasets (RDDs).</td>
+        </tr>
+        <tr>
+          <td><strong>Bioinformatics Example</strong></td>
+          <td>
+            <strong>Differential gene expression:</strong> Analyzing 12 RNA-seq samples with DESeq2/EdgeR in R.
+          </td>
+          <td>
+            <strong>Molecular Dynamics:</strong> Simulating protein-ligand dynamics (1 µs) using GROMACS/NAMD via MPI.
+          </td>
+          <td>
+            <strong>Population GWAS / Variant Matrix:</strong> Performing genome-wide association tests on 100,000 WGS samples with Hail / Apache Spark.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- QUESTION 4 -->
+  <section class="card">
+    <h2>4. Distributed Big Data Concepts & Genomic Benefits</h2>
+    <ul>
+      <li>
+        <strong>Distributed Storage (e.g., HDFS, AWS S3):</strong> Splits large files across many physical storage nodes with redundancy, offering linear capacity scaling and high aggregate read/write throughput.
+      </li>
+      <li>
+        <strong>Data Partitioning:</strong> Dividing massive datasets into smaller, manageable chunks based on logical boundaries (e.g., partitioning genomic variants by chromosome, coordinate intervals, or sample IDs).
+      </li>
+      <li>
+        <strong>Data Locality:</strong> Scheduling computations on the exact physical node where the data chunk resides, dramatically reducing network traffic and transfer latency.
+      </li>
+      <li>
+        <strong>MapReduce:</strong> A two-stage processing model where the <em>Map</em> phase filters and transforms partitions concurrently, and the <em>Reduce</em> phase groups and aggregates intermediate key-value results.
+      </li>
+      <li>
+        <strong>Apache Spark:</strong> An in-memory distributed compute framework utilizing Resilient Distributed Datasets (RDDs) and DataFrames with Directed Acyclic Graph (DAG) optimization, performing 10–100× faster than disk-bound MapReduce.
+      </li>
+    </ul>
+
+    <h3>How These Improve Genomic Analysis:</h3>
+    <ol>
+      <li><strong>Linear Scalability:</strong> Genomic tasks (such as variant filtering or read counting) are inherently parallelizable by chromosome or genomic regions ("embarrassingly parallel"), mapping seamlessly onto partitioned Spark clusters.</li>
+      <li><strong>Elimination of Network Congestion:</strong> Processing data where it is physically stored (data locality) avoids transferring multi-terabyte BAM/VCF files across network switches.</li>
+      <li><strong>Fast Iterative Processing:</strong> In-memory Spark caching enables iterative statistical tests (GWAS burden testing, regression, clustering) without repetitive disk read/write cycles.</li>
+    </ol>
+  </section>
+
+  <!-- QUESTION 5 -->
+  <section class="card">
+    <h2>5. Scalable Workflow: Rare Variants & Gene Enrichment (5,000 Genomes)</h2>
+
+    <div class="workflow-step">
+      <div class="step-badge">1</div>
+      <div>
+        <strong>Data Ingestion & Optimized Storage:</strong>
+        <p>Store raw multi-sample VCF/BCF in cloud object storage (AWS S3 / Google Cloud Storage). Ingest and convert files into an optimized columnar distributed matrix format—<strong>Hail MatrixTable</strong> or <strong>Apache Parquet</strong>—partitioned by chromosome and genomic position.</p>
+      </div>
+    </div>
+
+    <div class="workflow-step">
+      <div class="step-badge">2</div>
+      <div>
+        <strong>Quality Filtering (Sample & Variant QC):</strong>
+        <p>Execute parallel filtering using distributed Spark/Hail operations:</p>
+        <ul>
+          <li><em>Sample QC:</em> Filter samples with call rate &lt; 98%, aberrant heterozygosity rates, sex mismatches, and close kinship (cryptic relatedness).</li>
+          <li><em>Variant QC:</em> Filter genotypes with Genotype Quality (GQ) &lt; 20 and Depth (DP) &lt; 10. Retain variants passing GATK VQSR, variant call rate &gt; 95%, and Hardy-Weinberg Equilibrium (HWE <em>p</em> &gt; 10⁻⁶).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workflow-step">
+      <div class="step-badge">3</div>
+      <div>
+        <strong>Distributed Processing & Rare Variant Selection:</strong>
+        <p>Compute cohort Minor Allele Frequency (MAF) across 5,000 individuals in parallel. Cross-reference with external databases (gnomAD). Isolate rare variants satisfying <code>MAF &lt; 0.01</code> (or &lt; 0.1%).</p>
+      </div>
+    </div>
+
+    <div class="workflow-step">
+      <div class="step-badge">4</div>
+      <div>
+        <strong>Functional Annotation & Gene Enrichment Analysis:</strong>
+        <ul>
+          <li><em>Annotation:</em> Annotate variants via VEP / SnpEff to prioritize Predicted Loss-of-Function (pLoF: stop-gain, frameshift, splice-site) and damaging missense variants (CADD &gt; 20, REVEL &gt; 0.5).</li>
+          <li><em>Statistical Burden Testing:</em> Aggregate rare deleterious variants per gene and run distributed association tests (e.g., <strong>SKAT-O</strong>, <strong>CMC</strong>, or Firth logistic regression) across case-control phenotypes in Apache Spark/Hail.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="workflow-step">
+      <div class="step-badge">5</div>
+      <div>
+        <strong>Biological Interpretation:</strong>
+        <p>Apply multiple testing correction (Bonferroni or Benjamini-Hochberg FDR at <em>q</em> &lt; 0.05). Perform Gene Ontology (GO), KEGG/Reactome pathway analysis, and protein-protein interaction (STRING) queries on enriched genes to uncover underlying disease mechanisms.</p>
+      </div>
+    </div>
+
+    <div class="workflow-step">
+      <div class="step-badge">6</div>
+      <div>
+        <strong>Reproducibility & Workflow Governance:</strong>
+        <p>Encapsulate the entire pipeline using a workflow orchestrator (<strong>Nextflow</strong> or <strong>WDL</strong>) with software dependencies containerized via <strong>Docker/Singularity</strong>. Version code via Git and track dataset manifests for end-to-end provenance and auditability.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Student: Meti Habtamu (ID: GSR/6764/18) &bull; Bioinformatics Module 8 Assignment Solution</p>
+  </footer>
+</div>
+
+</body>
+</html>
